@@ -9,11 +9,13 @@ import {first} from 'rxjs/operators';
 export class CheckForUpdateService {
 
   constructor(appRef: ApplicationRef, private swUpdate: SwUpdate) {
-    // Allow the app to stabilize first, before starting polling for updates with `interval()`.
-    const appIsStable$ = appRef.isStable.pipe(first(isStable => isStable === true));
-    const everyTenSeconds$ = interval(10 * 1000);
-    const everyTenSecondsOnceAppIsStable$ = concat(appIsStable$, everyTenSeconds$);
+    if (this.swUpdate.isEnabled) {
+      // Allow the app to stabilize first, before starting polling for updates with `interval()`.
+      const appIsStable$ = appRef.isStable.pipe(first(isStable => isStable === true));
+      const everyTenSeconds$ = interval(10 * 1000);
+      const everyTenSecondsOnceAppIsStable$ = concat(appIsStable$, everyTenSeconds$);
 
-    everyTenSecondsOnceAppIsStable$.subscribe(() => swUpdate.checkForUpdate());
+      everyTenSecondsOnceAppIsStable$.subscribe(() => swUpdate.checkForUpdate());
+    }
   }
 }
