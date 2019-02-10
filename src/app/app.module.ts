@@ -14,7 +14,7 @@ import {
   MatRadioModule,
   MatIconModule,
   MatListModule,
-  MatDialogModule
+  MatDialogModule, MatSnackBarModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -36,6 +36,7 @@ import { environment } from '../environments/environment';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatCardModule,
+    MatSnackBarModule,
     MatTabsModule,
     MatButtonModule,
     MatInputModule,
@@ -49,7 +50,8 @@ import { environment } from '../environments/environment';
     FormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  declarations: [PeopleAppComponent, HomeComponent, PeopleComponent, CardComponent, AddDialogComponent, FormComponent, UpdateComponent],
+  declarations: [PeopleAppComponent, HomeComponent, PeopleComponent, CardComponent, AddDialogComponent,
+    FormComponent, UpdateComponent],
   entryComponents: [AddDialogComponent],
   providers: [HttpClient],
   bootstrap: [PeopleAppComponent]

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {environment} from '../environments/environment';
+import {UpdateService} from './swupdate/update.service';
 
 @Component({
   selector: 'pwa-app',
@@ -7,9 +8,11 @@ import {environment} from '../environments/environment';
   styleUrls: ['app.component.css']
 })
 export class PeopleAppComponent {
-  version: string;
+  version = '';
 
-  constructor() {
+
+  constructor(private updateService: UpdateService) {
     this.version = environment.version;
+
   }
 }
