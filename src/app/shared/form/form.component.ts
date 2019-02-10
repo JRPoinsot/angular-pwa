@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, Input, EventEmitter, OnChanges } from '@angular/core';
-import {Person} from '../../model/person.model';
 
 @Component({
   selector: 'pwa-form',
