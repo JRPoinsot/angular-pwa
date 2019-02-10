@@ -5,6 +5,7 @@
 
 export const environment = {
   production: false,
+  version: require('../../package.json').version,
   backend: {
     protocol: 'http',
     host: '127.0.0.1',

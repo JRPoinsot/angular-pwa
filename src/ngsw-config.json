@@ -23,5 +23,35 @@
         ]
       }
     }
+  ],
+  "dataGroups": [
+    {
+      "name": "get-person",
+      "urls": ["http://127.0.0.1:9000/api/person/*"],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxSize": "4",
+        "maxAge": "1h",
+        "timeout": "3s"
+      }
+    },
+    {
+      "name": "get-random-people",
+      "urls": ["http://127.0.0.1:9000/api/people/random"],
+      "cacheConfig": {
+        "strategy": "performance",
+        "maxAge": "5s",
+        "timeout": "3s"
+      }
+    },
+    {
+      "name": "get-people-list",
+      "urls": ["http://127.0.0.1:9000/api/people"],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxAge": "1h",
+        "timeout": "3s"
+      }
+    }
   ]
 }

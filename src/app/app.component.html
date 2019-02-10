@@ -3,7 +3,9 @@
     <a [routerLink]="['/']"> <img src="assets/images/logo-sfeir.svg" aria-label="pwa" alt="Pwa" /> </a>
   </span>
 
-  <span class="flex"></span>
+  <div class="flex pwa-app-version">
+    Angular PWA {{ version }}
+  </div>
 
   <span><a [routerLink]="['/people']">List</a></span>
 </mat-toolbar>
