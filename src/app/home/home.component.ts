@@ -11,7 +11,7 @@ const BASE_URL = 'http://localhost:9000';
   styleUrls: ['home.component.css']
 })
 export class HomeComponent implements OnInit {
-  private person: any = {};
+  person: any = {};
 
   constructor(private peopleService: PeopleService) {}
 
