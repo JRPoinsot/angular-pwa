@@ -11,7 +11,7 @@ export class FormComponent implements OnInit, OnChanges {
   isUpdateMode: boolean;
 
   @Output('cancel') cancel$: EventEmitter<any>;
-  @Output('submit') submit$: EventEmitter<any>;
+  @Output('personAdd') submit$: EventEmitter<any>;
 
   constructor() {
     this.submit$ = new EventEmitter();
