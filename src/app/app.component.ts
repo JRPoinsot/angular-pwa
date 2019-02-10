@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {environment} from '../environments/environment';
 import {UpdateService} from './swupdate/update.service';
+import {CheckForUpdateService} from './swupdate/check-for-update.service';
 
 @Component({
   selector: 'pwa-app',
@@ -11,8 +12,8 @@ export class PeopleAppComponent {
   version = '';
 
 
-  constructor(private updateService: UpdateService) {
+  constructor(private updateService: UpdateService,
+              private checkForUdpdate: CheckForUpdateService) {
     this.version = environment.version;
-
   }
 }
