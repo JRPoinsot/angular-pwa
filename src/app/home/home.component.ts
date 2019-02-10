@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import {PeopleService} from '../shared/people.service';
+import {mergeMap} from 'rxjs/operators';
 
 const BASE_URL = 'http://localhost:9000';
 
@@ -19,13 +20,12 @@ export class HomeComponent implements OnInit {
    * OnInit implementation
    */
   ngOnInit() {
-    this.peopleService.fetch().subscribe(people => (this.person = people[0]));
+    this.peopleService.fetchRandom().subscribe(person => (this.person = person));
   }
 
-  /**
-   * Returns random people
-   */
-  random() {
-    this.peopleService.fetchRandom().subscribe(person => (this.person = person));
+  delete(personId: string): void {
+    this.peopleService.delete(personId)
+      .pipe(mergeMap(() => this.peopleService.fetchRandom()))
+      .subscribe(person => (this.person = person));
   }
 }
