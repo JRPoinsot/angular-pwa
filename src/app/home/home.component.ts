@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { environment } from '../../environments/environment';
 import {PeopleService} from '../shared/people.service';
 import {mergeMap} from 'rxjs/operators';
-
-const BASE_URL = 'http://localhost:9000';
 
 @Component({
   selector: 'pwa-home',
