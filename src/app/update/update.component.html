@@ -1,1 +1,4 @@
-<section><pwa-form [model]="person" (submit)="submit($event)" (cancel)="cancel()" class="wide"></pwa-form></section>
+<section>
+  <pwa-form [model]="person" (personAdd)="submit($event)" (cancel)="cancel()" class="wide">
+  </pwa-form>
+</section>
